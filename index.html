@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello Weather</title>
+</head>
+<body>
+    <div id="app">
+        <div class="row g-0 h-100">
+            <div class="col-8 left-panel h-100">
+                <span class="brand">Welcome to your weather app</span>
+                <div class="weather-info">
+                    <h1 id="temperature">08°</h1>
+                    <h2 id="city-name">London</h2>
+                    <p id="date-time">date et heure</p>
+                    <p><i id="weather-icon" class="bi bi-cloud-rain"></i> <span id="description">Rainy</span></p>
+                </div>
+            </div>
+            <div class="col-4 right-panel">
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Another location">
+                    <i class="bi bi-search search-icon"></i>
+                </div>
+
+                <ul class="city-list">
+                    <li class="city-item">Birmingham</li>
+                    <li class="city-item">Manchester</li>
+                    <li class="city-item">New York</li>
+                    <li class="city-item">California</li>
+                </ul>
+
+                <hr>
+
+                <div class="weather-details">
+                    <h6 class="details-title">Weather Details</h6>
+                    <div class="detail-row">
+                        <span>Cloudy</span>
+                        <span id="cloudy">86%</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Humidity</span>
+                        <span id="humidity">62%</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Wind</span>
+                        <span id="wind">8km/h</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Rain</span>
+                        <span id="rain">8mm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmEFtCXHBPNHJNFWpgHHHJnMFTY" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#app {
+    width: 900px;
+    height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    background-image: url('./assets/img/rain_window.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.row {
+    height: 100%;
+    width: 100%;
+}
+
+.left-panel {
+    position: relative;
+    height: 100%;
+}
+
+.left-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6) 100%);
+}
+
+.right-panel {
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    height: 100%;
+    padding: 24px;
+    color: white;
+}
+
+.brand {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 12px;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.weather-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 2;
+}
+
+.weather-info h1 {
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.weather-info h2 {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.weather-info p {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 13px;
+    opacity: 0.6;
+    width: 100%;
+}
+
+.search-input::placeholder {
+    color: white;
+    opacity: 0.6;
+}
+
+.search-icon {
+    color: white;
+    opacity: 0.6;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.city-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.city-item {
+    color: white;
+    opacity: 0.6;
+    font-size: 13px;
+    padding: 8px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: opacity 0.2s ease;
+}
+
+.city-item:hover {
+    opacity: 1;
+}
+
+hr {
+    border-color: rgba(255,255,255,0.15);
+    margin-bottom: 16px;
+}
+
+.details-title {
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 13px;
+    opacity: 0.7;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}

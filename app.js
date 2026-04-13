@@ -65,15 +65,41 @@ async function getWeather(city) {
 
 // Recherche via loupe
 document.querySelector('.search-icon').addEventListener('click', () => {
+    const historyDiv = document.getElementById('history'); // valeur contenant historique
     const city = document.querySelector('.search-input').value.trim();
-    if (city) getWeather(city);
+    if (city) {
+        getWeather(city); //affiche la ville
+            if (city !== "") {
+                historyDiv.innerHTML = ""; //On reset ville history (s'il est présent)
+
+                const newItem = document.createElement('div');
+                newItem.classList.add('item');
+                newItem.textContent = city;
+
+                historyDiv.appendChild(newItem); //ajoute ville history
+                input.city = "";
+            }
+        }
 });
 
 // Recherche via touche Entrée
 document.querySelector('.search-input').addEventListener('keypress', (e) => {
+    const historyDiv = document.getElementById('history');
     if (e.key === 'Enter') {
         const city = e.target.value.trim();
-        if (city) getWeather(city);
+        if (city) {
+        getWeather(city);
+            if (city !== "") {
+                historyDiv.innerHTML = ""; //On reset ville history (s'il est présent)
+
+                const newItem = document.createElement('div');
+                newItem.classList.add('item');
+                newItem.textContent = city;
+
+                historyDiv.appendChild(newItem); //ajoute ville history
+                input.city = "";
+            }
+        }
     }
 });
 

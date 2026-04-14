@@ -55,11 +55,11 @@ async function getWeather(city) {
         const data = await response.json();
         if (data.cod !== 200) {
             alert('Ville introuvable, essaie une autre !');
-            return;
+            return false; //Return false : on ne trouve pas la ville
         }
-        updateUI(data);
+        updateUI(data); return true; //Return True : on trouve la fille
     } catch (error) {
-        console.error('Erreur API :', error);
+        console.error('Erreur API :', error); return false; //Erreur
     }
 }
 

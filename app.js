@@ -64,40 +64,39 @@ async function getWeather(city) {
 }
 
 // Recherche via loupe
-document.querySelector('.search-icon').addEventListener('click', () => {
-    const historyDiv = document.getElementById('history'); // valeur contenant historique
+document.querySelector('.search-icon').addEventListener('click', async () => {
+    const historyDiv = document.getElementById('history');
     const city = document.querySelector('.search-input').value.trim();
     if (city) {
-        getWeather(city); //affiche la ville
-            if (city !== "") {
-                historyDiv.innerHTML = ""; //On reset ville history (s'il est présent)
+        const isValid = await getWeather(city); //Val bool qui récupère return recherche ville
+        if (isValid) { // Si on retrouve la ville (si True), on effectue la fonction
+            historyDiv.innerHTML = "";
 
-                const newItem = document.createElement('div');
-                newItem.classList.add('item');
-                newItem.textContent = city;
+            const newItem = document.createElement('div');
+            newItem.classList.add('item');
+            newItem.textContent = city;
 
-                historyDiv.appendChild(newItem); //ajoute ville history
-                input.city = "";
-            }
+            historyDiv.appendChild(newItem);
         }
+    }
 });
 
 // Recherche via touche Entrée
-document.querySelector('.search-input').addEventListener('keypress', (e) => {
+document.querySelector('.search-input').addEventListener('keypress', async (e) => {
     const historyDiv = document.getElementById('history');
+
     if (e.key === 'Enter') {
-        const city = e.target.value.trim();
+        const city = e.target.value.trim(); //Val bool qui récupère return recherche ville
         if (city) {
-        getWeather(city);
-            if (city !== "") {
-                historyDiv.innerHTML = ""; //On reset ville history (s'il est présent)
+            const isValid = await getWeather(city);
+            if (isValid) { // Si on retrouve la ville (si True), on effectue la fonction
+                historyDiv.innerHTML = "";
 
                 const newItem = document.createElement('div');
                 newItem.classList.add('item');
                 newItem.textContent = city;
 
-                historyDiv.appendChild(newItem); //ajoute ville history
-                input.city = "";
+                historyDiv.appendChild(newItem);
             }
         }
     }
